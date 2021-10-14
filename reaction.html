@@ -28,15 +28,17 @@
   }
 
   function startTime() {
-    var startCount = 4
-    for(let i=0; i<startCount; i++){
-        setTimeout( ()=>{
-            document.getElementById("countdown").innerHTML = "Count: " + i
-        }, (startCount-i)*1000)
-    }
-    setTimeout(()=>{
-        checkTime()
-    }, 3000)
+      let mini = 2
+      let maxi = 10
+      countdown = Math.floor(Math.random()*(maxi-mini+1)+mini)
+      for(let i=0; i<countdown; i++){
+          setTimeout( ()=>{
+              document.getElementById("countdown").innerHTML = "Count: " + i
+          }, (3-i)*1000)
+      }
+      setTimeout(() => {
+          checkTime()
+      }, countdown*1000)
   }
 
   function checkTime(){
